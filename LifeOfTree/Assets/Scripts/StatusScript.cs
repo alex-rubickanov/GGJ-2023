@@ -12,8 +12,10 @@ public class StatusScript : MonoBehaviour
 
     [Header("Soil Moisture")]
     [SerializeField] float duringSpringReduction;
-    [SerializeField] float duringSummerReduction;
-    [SerializeField] float duringWinterReduction;
+    [SerializeField] public float duringSummerReduction;
+    [SerializeField] public float duringWinterReduction;
+ 
+
 
     Slider slider;
     void Start()
@@ -51,8 +53,12 @@ public class StatusScript : MonoBehaviour
         // if its winter
         else if (seasonChanges.seasonObjects[2].activeSelf == true)
         {
-            
             slider.value += duringWinterReduction * Time.deltaTime;
         }
+    }
+
+    public void addWater(float value)
+    {
+        slider.value += value * Time.deltaTime;
     }
 }
