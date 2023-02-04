@@ -37,22 +37,23 @@ public class StatusScript : MonoBehaviour
     private void SoilFunction()
     {
         //if its spring
-        if (seasonChanges.seasonObjects[0].activeSelf == true)
+        if (seasonChanges.randomSeason == 0)
         {
-            
+            print("Spring season");
             slider.value -= duringSpringReduction * Time.deltaTime;
 
             //if its summer
         }
-        else if (seasonChanges.seasonObjects[1].activeSelf == true)
+        else if (seasonChanges.randomSeason == 1)
         {
-           
+            print("Summer season");
             slider.value -= duringSummerReduction * Time.deltaTime;
         }
 
         // if its winter
-        else if (seasonChanges.seasonObjects[2].activeSelf == true)
+        else if (seasonChanges.randomSeason == 2)
         {
+            print("Winter season");
             slider.value += duringWinterReduction * Time.deltaTime;
         }
     }

@@ -18,12 +18,14 @@ public class SeasonChanges : MonoBehaviour
     [SerializeField] float minimumTime;
     [SerializeField] float maximumTime;
 
- 
+    [SerializeField] StatusScript statusScript;
+
+    public bool declare = false;
 
     Animator anim;
 
 
-    void Start()
+    void Awake()
     {
         
             StartCoroutine(SetTheSeason());
@@ -49,22 +51,19 @@ public class SeasonChanges : MonoBehaviour
             
             yield return new WaitForSeconds(timeOfChange);
 
-
             randomSeason = Random.Range(0, seasonNames.Count);
-
-         
-            
-
-            changeSeasonText();
             AddAndRemove();
-            
-            anim.SetTrigger("changeSeason");
+            changeSeasonText();
+            Invoke("declareSeason", 5);
+         
 
 
 
 
         }
     }
+
+    
 
     void AddAndRemove()
     {
@@ -89,23 +88,23 @@ public class SeasonChanges : MonoBehaviour
 
     private void changeSeasonText()
     {
-        if (seasonNames[randomSeason].Contains("Spring"))
+        if (randomSeason == 0)
         {
-            
+           
             seasonObjects[0].SetActive(true);
             seasonObjects[1].SetActive(false);
             seasonObjects[2].SetActive(false);
 
-        }else if(seasonNames[randomSeason].Contains("Summer"))
+        }else if(randomSeason == 1)
         {
-           
+            statusScript.duringSummerReduction += 1;
             seasonObjects[0].SetActive(false);
             seasonObjects[1].SetActive(true);
             seasonObjects[2].SetActive(false);
         }
-        else if (seasonNames[randomSeason].Contains("Winter"))
+        else if (randomSeason == 2)
         {
-        
+            statusScript.duringWinterReduction += 1;
             seasonObjects[0].SetActive(false);
             seasonObjects[1].SetActive(false);
             seasonObjects[2].SetActive(true);

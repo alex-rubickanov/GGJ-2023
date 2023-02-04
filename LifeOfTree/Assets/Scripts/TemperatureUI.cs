@@ -42,7 +42,8 @@ public class TemperatureUI : MonoBehaviour
 
     private void seasons()
     {
-        if (seasonChanges.seasonObjects[1].activeSelf == true)
+
+        if (seasonChanges.randomSeason == 1)
         {
             
 
@@ -53,7 +54,7 @@ public class TemperatureUI : MonoBehaviour
 
             //if its summer
         }
-        else if (seasonChanges.seasonObjects[2].activeSelf == true)
+        else if (seasonChanges.randomSeason == 2)
         {
            
             slider.value -= n * Time.deltaTime;
@@ -65,7 +66,18 @@ public class TemperatureUI : MonoBehaviour
         {
             arrowUpAnim.SetBool("Heating", false);
             arrowDownAnim.SetBool("Cold", false);
+
+            if(slider.value < startingValue)
+            {
+                slider.value += n * Time.deltaTime;
+            }
+            else if( slider.value > startingValue)
+            {
+                slider.value -= n * Time.deltaTime;
+            }
         }
+
+       
        
 
        
