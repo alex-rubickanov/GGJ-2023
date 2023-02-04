@@ -12,13 +12,13 @@ public class IslandScript : MonoBehaviour
     [Header("Status")]
     [SerializeField] public float startingValueStatus;
     [SerializeField] SeasonChanges seasonChanges;
-    [SerializeField] Slider slider;
+    [SerializeField] public Slider slider;
 
     [Header("Soil Moisture")]
     [SerializeField] float duringSpringReduction;
     [SerializeField] float duringSummerReduction;
     [SerializeField] float duringWinterReduction;
-
+    
     void Start()
     {
         

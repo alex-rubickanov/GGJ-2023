@@ -17,8 +17,7 @@ public class TemperatureUI : MonoBehaviour
 
     [SerializeField] Animator arrowUpAnim;
     [SerializeField] Animator arrowDownAnim;
-    [SerializeField] GameObject upArrow;
-    [SerializeField] GameObject downArrow;
+ 
 
     Animator anim;
 

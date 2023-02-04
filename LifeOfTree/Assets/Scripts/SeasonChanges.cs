@@ -54,10 +54,6 @@ public class SeasonChanges : MonoBehaviour
             randomSeason = Random.Range(0, seasonNames.Count);
             AddAndRemove();
             changeSeasonText();
-            Invoke("declareSeason", 5);
-         
-
-
 
 
         }
