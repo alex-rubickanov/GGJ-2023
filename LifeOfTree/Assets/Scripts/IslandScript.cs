@@ -15,6 +15,8 @@ public class IslandScript : MonoBehaviour
     void Update()
     {
         IslandRotation();
+
+
     }
 
     private void IslandRotation()
