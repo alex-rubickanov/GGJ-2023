@@ -9,7 +9,7 @@ public class SeasonChanges : MonoBehaviour
     [SerializeField] string[] seasons;
     float timeOfChange;
 
-    [SerializeField] GameObject [] seasonObjects;
+    [SerializeField] public GameObject [] seasonObjects;
     [SerializeField] TextMeshProUGUI uiText;
     public int randomSeason;
 
@@ -40,7 +40,7 @@ public class SeasonChanges : MonoBehaviour
 
     IEnumerator SetTheSeason()
     {
-        timeOfChange = Random.Range(5, 10);
+        timeOfChange = Random.Range(10, 20);
         while (true)
         {
             
@@ -48,6 +48,9 @@ public class SeasonChanges : MonoBehaviour
 
 
             randomSeason = Random.Range(0, seasonNames.Count);
+
+         
+            
 
             changeSeasonText();
             AddAndRemove();
@@ -62,6 +65,9 @@ public class SeasonChanges : MonoBehaviour
 
     void AddAndRemove()
     {
+
+       
+
         if (seasonNames.Count > 0)
         {
             seasonNames.Remove(seasonNames[randomSeason]);
@@ -75,6 +81,8 @@ public class SeasonChanges : MonoBehaviour
         }
 
     }
+
+   
 
     private void changeSeasonText()
     {

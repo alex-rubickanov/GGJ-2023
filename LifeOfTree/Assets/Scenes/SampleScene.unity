@@ -180,7 +180,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Too wet
+  m_text: 'Too Cold
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d4f976379743da47996f41c6c277167, type: 2}
   m_sharedMaterial: {fileID: 1333493251577517156, guid: 3d4f976379743da47996f41c6c277167, type: 2}
@@ -342,6 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 246552229}
   - component: {fileID: 246552230}
+  - component: {fileID: 246552231}
   m_Layer: 5
   m_Name: StatusSlider
   m_TagString: Untagged
@@ -365,6 +368,7 @@ RectTransform:
   - {fileID: 339666475}
   - {fileID: 1831699330}
   - {fileID: 47695597}
+  - {fileID: 1391762132}
   m_Father: {fileID: 1455286126}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -419,11 +423,58 @@ MonoBehaviour:
   m_Direction: 2
   m_MinValue: 0
   m_MaxValue: 100
-  m_WholeNumbers: 1
+  m_WholeNumbers: 0
   m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &246552231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246552228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783e28844d04ab547bdb1020b4baca5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  island: {fileID: 2118260563}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 0.9921569, g: 0.6862745, b: 0.3647059, a: 1}
+    key1: {r: 0.56078434, g: 0.9725491, b: 0, a: 1}
+    key2: {r: 0.22352943, g: 0.31764707, b: 0.6784314, a: 1}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 24903
+    ctime1: 45296
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 30069
+    atime2: 65535
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 3
+  fill: {fileID: 167996065}
+  seasonChanges: {fileID: 1391762135}
+  duringSpringReduction: 2
+  duringSummerReduction: 5
+  duringWinterReduction: 5
 --- !u!1 &339666474
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,7 +723,7 @@ GameObject:
   - component: {fileID: 511137413}
   - component: {fileID: 511137412}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: DraggableObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1356,19 +1407,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391762131}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.445671, y: 4.5985804, z: 4.445671}
+  m_LocalScale: {x: 43.09043, y: 2.3099601, z: 43.09043}
   m_Children:
   - {fileID: 883885201}
   - {fileID: 1801535960}
   - {fileID: 1282661601}
-  m_Father: {fileID: 1455286126}
-  m_RootOrder: 1
+  m_Father: {fileID: 246552229}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -513, y: 432}
+  m_AnchoredPosition: {x: 920.8037, y: 242.1184}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1391762133
@@ -1621,7 +1672,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 246552229}
-  - {fileID: 1391762132}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2013,3 +2063,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 40
+  startingValueStatus: 55
+  seasonChanges: {fileID: 1391762135}
+  slider: {fileID: 246552230}
+  duringSpringReduction: 1
+  duringSummerReduction: 2
+  duringWinterReduction: 2
