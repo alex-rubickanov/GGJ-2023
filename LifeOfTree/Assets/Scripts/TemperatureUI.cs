@@ -33,17 +33,17 @@ public class TemperatureUI : MonoBehaviour
     private void seasons()
     {
        
-        if (seasonChanges.seasonObjects[0].activeSelf == true)
+        if (seasonChanges.seasonObjects[1].activeSelf == true)
         {
-
-            slider.value -= n * Time.deltaTime;
+            print("Its summer");
+            slider.value += n * Time.deltaTime;
 
             //if its summer
         }
         else if (seasonChanges.seasonObjects[2].activeSelf == true)
         {
 
-            slider.value += n * Time.deltaTime;
+            slider.value -= n * Time.deltaTime;
         }
 
        

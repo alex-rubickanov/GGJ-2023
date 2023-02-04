@@ -509,6 +509,7 @@ GameObject:
   - component: {fileID: 327624535}
   - component: {fileID: 327624537}
   - component: {fileID: 327624536}
+  - component: {fileID: 327624538}
   m_Layer: 5
   m_Name: ArrowDOWN
   m_TagString: Untagged
@@ -573,6 +574,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327624534}
   m_CullTransparentMesh: 1
+--- !u!95 &327624538
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327624534}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 48b7bbd9283e26e45b21cab483a177dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &339666474
 GameObject:
   m_ObjectHideFlags: 0
@@ -2617,9 +2637,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 10
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2667,7 +2687,8 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   fill: {fileID: 1452189829}
-  n: 4
+  n: 1
+  startingValue: 70
 --- !u!1 &1561453749
 GameObject:
   m_ObjectHideFlags: 0
@@ -2860,6 +2881,7 @@ GameObject:
   - component: {fileID: 1785051159}
   - component: {fileID: 1785051161}
   - component: {fileID: 1785051160}
+  - component: {fileID: 1785051162}
   m_Layer: 5
   m_Name: ArrowUP
   m_TagString: Untagged
@@ -2924,6 +2946,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785051158}
   m_CullTransparentMesh: 1
+--- !u!95 &1785051162
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785051158}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3b0b9c65ed21762418ec96d01945184a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1801535959
 PrefabInstance:
   m_ObjectHideFlags: 0
