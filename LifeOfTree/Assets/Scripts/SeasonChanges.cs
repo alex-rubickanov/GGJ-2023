@@ -15,6 +15,9 @@ public class SeasonChanges : MonoBehaviour
 
     [SerializeField] List<string> seasonNames;
 
+    [SerializeField] float minimumTime;
+    [SerializeField] float maximumTime;
+
  
 
     Animator anim;
@@ -40,7 +43,7 @@ public class SeasonChanges : MonoBehaviour
 
     IEnumerator SetTheSeason()
     {
-        timeOfChange = Random.Range(10, 20);
+        timeOfChange = Random.Range(minimumTime, maximumTime);
         while (true)
         {
             

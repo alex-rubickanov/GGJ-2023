@@ -13,6 +13,15 @@ public class TemperatureUI : MonoBehaviour
     [SerializeField] float n;
     [SerializeField] float startingValue;
 
+    //Animation
+
+    [SerializeField] Animator arrowUpAnim;
+    [SerializeField] Animator arrowDownAnim;
+    [SerializeField] GameObject upArrow;
+    [SerializeField] GameObject downArrow;
+
+    Animator anim;
+
 
 
 
@@ -21,6 +30,7 @@ public class TemperatureUI : MonoBehaviour
     {
         fill.color = gradient.Evaluate(1f);
         slider.value = startingValue;
+   
     }
 
     // Update is called once per frame
@@ -32,19 +42,31 @@ public class TemperatureUI : MonoBehaviour
 
     private void seasons()
     {
-       
         if (seasonChanges.seasonObjects[1].activeSelf == true)
         {
+            
+
             print("Its summer");
             slider.value += n * Time.deltaTime;
+            arrowUpAnim.SetBool("Heating", true);
+            arrowDownAnim.SetBool("Cold", false);
 
             //if its summer
         }
         else if (seasonChanges.seasonObjects[2].activeSelf == true)
         {
-
+           
             slider.value -= n * Time.deltaTime;
+
+            arrowUpAnim.SetBool("Heating", false);
+            arrowDownAnim.SetBool("Cold", true);
         }
+        else
+        {
+            arrowUpAnim.SetBool("Heating", false);
+            arrowDownAnim.SetBool("Cold", false);
+        }
+       
 
        
     }
