@@ -14,10 +14,10 @@ public class IslandScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        NewMethod();
+        IslandRotation();
     }
 
-    private void NewMethod()
+    private void IslandRotation()
     {
         if (Input.GetKey(KeyCode.D))
         {
