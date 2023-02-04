@@ -65,11 +65,11 @@ public class DraggingObjects : MonoBehaviour
     }
 
 
-    private void Update()
+   private void Update()
     {
         if(transform.position.y <= yLimit) {
 
-            transform.position = new Vector3(transform.position.x, 30f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, 13f, transform.position.z);
         }
     }
 }
