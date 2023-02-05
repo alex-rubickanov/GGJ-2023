@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TreeEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class levelDifficulty : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class levelDifficulty : MonoBehaviour
     [SerializeField] SeasonChanges seasonChanges;
     [SerializeField] TreeGrow treeGrowth;
     [SerializeField] SpawnPoints points;
+    [SerializeField] healthHandler health;
+    [SerializeField] GameObject deathScreen;
 
     bool stage1 = false;
     bool stage2 = false;
@@ -86,6 +89,20 @@ public class levelDifficulty : MonoBehaviour
 
         }
 
-        s
+        // death screen
+        if(health.Totalhealth <= 0)
+        {
+            Time.timeScale = 0;
+
+            deathScreen.SetActive(true);
+        }
+
+
+
+    }
+
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(0);
     }
 }
