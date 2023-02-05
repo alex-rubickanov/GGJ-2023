@@ -15,6 +15,10 @@ public class SpawnPoints : MonoBehaviour
     [SerializeField] LayerMask layer;
     RaycastHit hit;
     AudioSource audioSource;
+
+    public int minTime;
+    public int MaxTime;
+
     void Start()
     {
         StartCoroutine(spawnRandomPoints());
@@ -39,7 +43,7 @@ public class SpawnPoints : MonoBehaviour
 
     IEnumerator spawnRandomPoints()
     {
-        randomNumber = Random.Range(5, 8);
+        randomNumber = Random.Range(minTime, MaxTime);
 
 
         while (true)

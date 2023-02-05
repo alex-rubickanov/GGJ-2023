@@ -11,7 +11,7 @@ public class StatusScript : MonoBehaviour
     [SerializeField] SeasonChanges seasonChanges;
 
     [Header("Soil Moisture")]
-    [SerializeField] float duringSpringReduction;
+    [SerializeField] public float duringSpringReduction;
     [SerializeField] public float duringSummerReduction;
     [SerializeField] public float duringWinterReduction;
  

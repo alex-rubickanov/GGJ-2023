@@ -15,8 +15,8 @@ public class SeasonChanges : MonoBehaviour
 
     [SerializeField] List<string> seasonNames;
 
-    [SerializeField] float minimumTime;
-    [SerializeField] float maximumTime;
+    [SerializeField] public float minimumTime;
+    [SerializeField] public float maximumTime;
 
     [SerializeField] StatusScript statusScript;
 

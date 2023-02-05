@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class TreeGrow : MonoBehaviour
 {
-    [SerializeField] private float treeGrow = 0;
+    [SerializeField] public float treeGrow = 0;
     [SerializeField] TextMeshProUGUI maturityValue; 
     [SerializeField] float growthRate = 1f;
     public GameObject[] trees;
