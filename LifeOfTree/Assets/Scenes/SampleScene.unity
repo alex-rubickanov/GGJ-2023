@@ -11153,7 +11153,7 @@ MonoBehaviour:
   healthValue: {fileID: 1962361363}
   statusSlider: {fileID: 246552230}
   healthReduction: 1
-  Totalhealth: 1
+  Totalhealth: 100
 --- !u!95 &1822070407
 Animator:
   serializedVersion: 3
