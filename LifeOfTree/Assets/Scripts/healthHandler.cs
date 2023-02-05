@@ -9,10 +9,15 @@ public class healthHandler : MonoBehaviour
     [SerializeField] TextMeshProUGUI healthValue;
     [SerializeField] Slider statusSlider;
     [SerializeField] int healthReduction;
-    int Totalhealth = 100;
+    public int Totalhealth = 100;
+
+    Animator anim;
     void Start()
     {
+        anim = GetComponent<Animator>();
         StartCoroutine(delay());
+        healthValue.SetText(Totalhealth.ToString());
+       
     }
 
     // Update is called once per frame
@@ -30,7 +35,8 @@ public class healthHandler : MonoBehaviour
 
             if (statusSlider.value < 36.6f || statusSlider.value > 68.0f)
             {
-                Totalhealth = (Totalhealth - healthReduction);
+                anim.SetTrigger("reduceHealth");
+                Totalhealth -= healthReduction;
 
 
                 print(Totalhealth);

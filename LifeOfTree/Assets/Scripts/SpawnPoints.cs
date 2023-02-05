@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SpawnPoints : MonoBehaviour
@@ -8,6 +9,7 @@ public class SpawnPoints : MonoBehaviour
     [SerializeField] GameObject pointObject;
     [SerializeField] float objectSpeed;
     [SerializeField] int addPoints = 10;
+    [SerializeField] GameObject floatingPoints;
     int randomNumber;
     [SerializeField] ShopButton shop;
     [SerializeField] LayerMask layer;
@@ -28,6 +30,9 @@ public class SpawnPoints : MonoBehaviour
         {
             shop.TotalPoints += addPoints;
             audioSource.Play();
+            GameObject floatP = Instantiate(floatingPoints, hit.point, Quaternion.identity);
+           
+            Destroy(floatP, 2f);
             Destroy(hit.rigidbody.gameObject);
         }
     }
@@ -41,6 +46,8 @@ public class SpawnPoints : MonoBehaviour
         {
             yield return new WaitForSeconds(randomNumber);
             int randomLocation = Random.Range(0, spawnLocations.Length);
+            
+
 
             GameObject point = Instantiate(pointObject, spawnLocations[randomLocation].position, Quaternion.identity);
             point.GetComponent<Rigidbody>().velocity = -transform.up * objectSpeed * Time.deltaTime;

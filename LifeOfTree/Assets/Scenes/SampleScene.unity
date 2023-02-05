@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18388186, g: 0.22880676, b: 0.30182853, a: 1}
+  m_IndirectSpecularColor: {r: 0.18388163, g: 0.22880602, b: 0.3018251, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Too Cold
+  m_text: 'Too WET
 
 '
   m_isRightToLeft: 0
@@ -2380,8 +2380,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2558,10 +2558,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopInterface: {fileID: 1369074577}
   pointsValue: {fileID: 1094286752}
-  TotalPoints: 10
+  TotalPoints: 1000
   healCost: 40
   additionalHeal: 60
   healValue: {fileID: 1962361363}
+  healthHandler: {fileID: 1822070406}
   fireCost: 20
   fire: {fileID: 5777866894146675945}
   fireTimeLimit: 10
@@ -10435,6 +10436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1822070405}
   - component: {fileID: 1822070406}
+  - component: {fileID: 1822070407}
   m_Layer: 5
   m_Name: HealthUI
   m_TagString: Untagged
@@ -10478,6 +10480,26 @@ MonoBehaviour:
   healthValue: {fileID: 1962361363}
   statusSlider: {fileID: 246552230}
   healthReduction: 1
+  Totalhealth: 50
+--- !u!95 &1822070407
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822070404}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b21a4778ba04c40478b8f3684ae42704, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1831699329
 GameObject:
   m_ObjectHideFlags: 0
@@ -11121,6 +11143,7 @@ MonoBehaviour:
   pointObject: {fileID: 5359826414577455647, guid: f904859b36758d548a2f56f63191863a, type: 3}
   objectSpeed: 20
   addPoints: 10
+  floatingPoints: {fileID: 8821830507892137106, guid: 1d5a315420ca6ae48ba33516b445ad1a, type: 3}
   shop: {fileID: 679036714}
   layer:
     serializedVersion: 2
@@ -11719,7 +11742,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148264360769}
   m_LocalRotation: {x: -0.012571919, y: 0.5309177, z: -0.04984838, w: 0.84586257}
-  m_LocalPosition: {x: 0.469, y: 0.176, z: 0.057}
+  m_LocalPosition: {x: 0.5683, y: 0.1821, z: -0.0151}
   m_LocalScale: {x: 0.04997275, y: 0.04997275, z: 0.049972747}
   m_Children:
   - {fileID: 3745622627448593054}
@@ -13056,7 +13079,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0d514e7c150c9d547b50fc6bd405b98e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.03
+  m_Volume: 0.246
   m_Pitch: 1
   Loop: 1
   Mute: 0

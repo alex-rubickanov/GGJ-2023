@@ -13,6 +13,7 @@ public class ShopButton : MonoBehaviour
     [SerializeField] int healCost;
     [SerializeField] int additionalHeal;
     [SerializeField] TextMeshProUGUI healValue;
+    [SerializeField] healthHandler healthHandler;
     //fire 
     [SerializeField] int fireCost;
     [SerializeField] ParticleSystem fire;
@@ -47,17 +48,25 @@ public class ShopButton : MonoBehaviour
 
     public void PurchaseHeal()
     {
-        if(TotalPoints >= healCost)
+        if(TotalPoints >= healCost && healthHandler.Totalhealth < 100)
         {
             TotalPoints -= healCost;
 
-            if(int.Parse(healValue.text) < 100)
-            {
-              
-                int totalHealth = int.Parse(healValue.text) + additionalHeal;
-                print(totalHealth);
-                healValue.SetText(totalHealth.ToString());
+            
+              if(healthHandler.Totalhealth + additionalHeal > 100)
+                {
+                    healthHandler.Totalhealth = 100;
+                     healValue.SetText(healthHandler.Totalhealth.ToString());
             }
+                else
+                {
+                    healthHandler.Totalhealth += additionalHeal;
+
+                    healValue.SetText(healthHandler.Totalhealth.ToString());
+                }
+
+              
+            
 
         }
     }
