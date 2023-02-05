@@ -50,7 +50,7 @@ public class SeasonChanges : MonoBehaviour
         {
             
             yield return new WaitForSeconds(timeOfChange);
-
+            anim.SetTrigger("changeSeason");
             randomSeason = Random.Range(0, seasonNames.Count);
             AddAndRemove();
             changeSeasonText();
