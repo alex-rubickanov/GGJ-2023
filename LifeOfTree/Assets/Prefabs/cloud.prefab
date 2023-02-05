@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8e15fc28d8efb41aa0223556703581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cloudTimeLimit: 5
-  rainCloudTimeLimit: 5
+  cloudTimeLimit: 30
+  rainCloudTimeLimit: 15
   RainCloud: 0
   Cloud: 1

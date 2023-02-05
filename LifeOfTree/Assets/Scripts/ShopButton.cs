@@ -67,7 +67,7 @@ public class ShopButton : MonoBehaviour
         if(TotalPoints>= fireCost)
         {
             fire.Play();
-
+            TotalPoints -= fireCost;
             Invoke("TurnOffTheFire", fireTimeLimit);
         }
     }

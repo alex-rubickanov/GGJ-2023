@@ -26,7 +26,7 @@ public class TreeGrow : MonoBehaviour
 
     private void FixedUpdate()
     {
-       if(statusSlider.value > 36.6f || statusSlider.value < 68.0f)
+       if(statusSlider.value > 36.6f && statusSlider.value < 68.0f)
         {
             treeGrow += growthRate * Time.deltaTime;
             int treeGrowth = (int)treeGrow;
@@ -74,7 +74,7 @@ public class TreeGrow : MonoBehaviour
         
             trees[1].SetActive(false);
             trees[2].SetActive(true);
-            oneTime = true;
+        
 
             if (oneMoreMoreMoreTime)
             {
@@ -90,7 +90,7 @@ public class TreeGrow : MonoBehaviour
        
             trees[2].SetActive(false);
             trees[3].SetActive(true);
-            oneTime = true;
+           
             if (oneMoreMoreMoreMoreTime)
             {
                 treeGrowParticle.Play();

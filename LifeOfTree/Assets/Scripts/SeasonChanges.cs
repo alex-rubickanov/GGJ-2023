@@ -93,14 +93,14 @@ public class SeasonChanges : MonoBehaviour
 
         }else if(randomSeason == 1)
         {
-            statusScript.duringSummerReduction += 1;
+            //statusScript.duringSummerReduction += 1;
             seasonObjects[0].SetActive(false);
             seasonObjects[1].SetActive(true);
             seasonObjects[2].SetActive(false);
         }
         else if (randomSeason == 2)
         {
-            statusScript.duringWinterReduction += 1;
+            //statusScript.duringWinterReduction += 1;
             seasonObjects[0].SetActive(false);
             seasonObjects[1].SetActive(false);
             seasonObjects[2].SetActive(true);

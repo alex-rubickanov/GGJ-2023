@@ -8,20 +8,35 @@ public class healthHandler : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI healthValue;
     [SerializeField] Slider statusSlider;
-    [SerializeField] int healthReduction = 1;
+    [SerializeField] int healthReduction;
+    int Totalhealth = 100;
     void Start()
     {
-        
+        StartCoroutine(delay());
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if(statusSlider.value < 36.6f || statusSlider.value > 68.0f)
+      
+    }
+
+    IEnumerator delay()
+    {
+
+        while (true)
         {
-            int Totalhealth = (int)statusSlider.value - healthReduction;
-            print(Totalhealth);
-            healthValue.SetText(Totalhealth.ToString());
+            yield return new WaitForSeconds(1);
+
+            if (statusSlider.value < 36.6f || statusSlider.value > 68.0f)
+            {
+                Totalhealth = (Totalhealth - healthReduction);
+
+
+                print(Totalhealth);
+                healthValue.SetText(Totalhealth.ToString());
+            }
         }
+
     }
 }
