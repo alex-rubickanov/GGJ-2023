@@ -11,6 +11,7 @@ public class levelDifficulty : MonoBehaviour
     [SerializeField] SpawnPoints points;
     [SerializeField] healthHandler health;
     [SerializeField] GameObject deathScreen;
+    [SerializeField] GameObject WinScreen;
 
     bool stage1 = false;
     bool stage2 = false;
@@ -36,6 +37,9 @@ public class levelDifficulty : MonoBehaviour
                 statusScript.duringSummerReduction -= 0.2f;
                 statusScript.duringWinterReduction += 0.2f;
                 statusScript.duringSpringReduction -= 0.2f;
+
+                treeGrowth.growthRate += 0.1f;
+
                 stage1 = true;
             }
          
@@ -59,6 +63,8 @@ public class levelDifficulty : MonoBehaviour
 
                 points.minTime -= 1;
                 points.MaxTime -= 1;
+                treeGrowth.growthRate += 0.1f;
+
                 stage2 = true;
 
 
@@ -81,6 +87,7 @@ public class levelDifficulty : MonoBehaviour
 
                 points.minTime -= 1;
                 points.MaxTime -= 1;
+                treeGrowth.growthRate += 0.1f;
                 stage3 = true;
 
 
@@ -96,12 +103,21 @@ public class levelDifficulty : MonoBehaviour
             deathScreen.SetActive(true);
         }
 
+        if(treeGrowth.treeGrow >= 100)
+        {
+
+            Time.timeScale = 0;
+
+           WinScreen.SetActive(true);
+        }
+
 
 
     }
 
     public void ResetGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 }

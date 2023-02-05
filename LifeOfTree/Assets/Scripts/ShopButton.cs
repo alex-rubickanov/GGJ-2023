@@ -65,8 +65,8 @@ public class ShopButton : MonoBehaviour
                     healValue.SetText(healthHandler.Totalhealth.ToString());
                 }
 
-              
-            
+            shopInterface.SetActive(false);
+
 
         }
     }
@@ -77,7 +77,9 @@ public class ShopButton : MonoBehaviour
         {
             fire.Play();
             TotalPoints -= fireCost;
+            shopInterface.SetActive(false);
             Invoke("TurnOffTheFire", fireTimeLimit);
+           
         }
     }
 
@@ -86,13 +88,5 @@ public class ShopButton : MonoBehaviour
         fire.Stop();
     }
 
-    public void TriggerHover()
-    {
-        anim.SetBool("hover", true);
-    }
-
-    public void UnHover()
-    {
-        anim.SetBool("hover", false);
-    }
+    
 }

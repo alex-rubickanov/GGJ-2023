@@ -10,6 +10,7 @@ public class CloudSpawner : MonoBehaviour
     //cloud cost
     [SerializeField] int cloudCost;
     [SerializeField] int rainCloudCost;
+    [SerializeField] GameObject shopInterface;
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class CloudSpawner : MonoBehaviour
         {
             shop.TotalPoints -= cloudCost;
             Instantiate(cloud, transform.position, Quaternion.Euler(-90f, 0f, 0f));
+            shopInterface.SetActive(false);
         }
     }
 
@@ -41,6 +43,7 @@ public class CloudSpawner : MonoBehaviour
         {
             shop.TotalPoints -= cloudCost;
             Instantiate(rainCloud, transform.position, Quaternion.Euler(-90f, 0f, 0f));
+            shopInterface.SetActive(false);
         }
     }
 }

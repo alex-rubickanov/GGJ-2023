@@ -9,7 +9,7 @@ public class TreeGrow : MonoBehaviour
 {
     [SerializeField] public float treeGrow = 0;
     [SerializeField] TextMeshProUGUI maturityValue; 
-    [SerializeField] float growthRate = 1f;
+    [SerializeField] public float growthRate = 1f;
     public GameObject[] trees;
     public ParticleSystem treeGrowParticle;
     [SerializeField] Slider statusSlider;
