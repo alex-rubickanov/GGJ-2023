@@ -9,6 +9,12 @@ public class Campfire : MonoBehaviour
     [SerializeField] Slider statusSlider;
     [SerializeField] float heat;
 
+    AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource= GetComponent<AudioSource>();
+    }
 
     public void PressedButton()
     {
@@ -20,7 +26,8 @@ public class Campfire : MonoBehaviour
     {
         if (fireParticle.isPlaying == true)
         {
+            audioSource.enabled = true;
             statusSlider.value -= heat * Time.deltaTime;
-        }
+        } else { audioSource.enabled = false;}
     }
 }

@@ -12,10 +12,11 @@ public class SpawnPoints : MonoBehaviour
     [SerializeField] ShopButton shop;
     [SerializeField] LayerMask layer;
     RaycastHit hit;
-
+    AudioSource audioSource;
     void Start()
     {
         StartCoroutine(spawnRandomPoints());
+        audioSource= GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class SpawnPoints : MonoBehaviour
         if(Physics.Raycast(ray, out hit, 100, layer) && Input.GetKeyDown(KeyCode.Mouse0))
         {
             shop.TotalPoints += addPoints;
+            audioSource.Play();
             Destroy(hit.rigidbody.gameObject);
         }
     }
