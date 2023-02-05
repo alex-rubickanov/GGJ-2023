@@ -88,5 +88,5 @@ public class ShopButton : MonoBehaviour
         fire.Stop();
     }
 
-    
+        
 }

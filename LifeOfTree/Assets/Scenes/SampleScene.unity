@@ -10738,7 +10738,7 @@ MonoBehaviour:
   shop: {fileID: 679036714}
   cloudCost: 20
   rainCloudCost: 20
-  shopInterface: {fileID: 0}
+  shopInterface: {fileID: 1369074577}
 --- !u!4 &1511370621
 Transform:
   m_ObjectHideFlags: 0
@@ -12817,14 +12817,14 @@ MonoBehaviour:
   - {fileID: 922011259}
   pointObject: {fileID: 5359826414577455647, guid: f904859b36758d548a2f56f63191863a, type: 3}
   objectSpeed: 15
-  addPoints: 10
+  addPoints: 7
   floatingPoints: {fileID: 8821830507892137106, guid: 1d5a315420ca6ae48ba33516b445ad1a, type: 3}
   shop: {fileID: 679036714}
   layer:
     serializedVersion: 2
     m_Bits: 256
-  minTime: 5
-  MaxTime: 8
+  minTime: 7
+  MaxTime: 9
 --- !u!4 &2027389480
 Transform:
   m_ObjectHideFlags: 0
@@ -15011,7 +15011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireParticle: {fileID: 5777866894146675945}
   statusSlider: {fileID: 246552230}
-  heat: 1.2
+  heat: 1.4
 --- !u!82 &2339365225882402498
 AudioSource:
   m_ObjectHideFlags: 0
