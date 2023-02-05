@@ -1,52 +1,108 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class TreeGrow : MonoBehaviour
 {
-    [SerializeField] private int treeGrow = 0;
+    [SerializeField] private float treeGrow = 0;
+    [SerializeField] TextMeshProUGUI maturityValue; 
+    [SerializeField] float growthRate = 1f;
     public GameObject[] trees;
     public ParticleSystem treeGrowParticle;
+    [SerializeField] Slider statusSlider;
+    bool oneTime = true;
+    bool oneMoreTime = true;
+    bool oneMoreMoreMoreTime = true;
+    bool oneMoreMoreMoreMoreTime = true;
 
 
-    
-    private void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.G))
+        maturityValue.SetText(treeGrow.ToString());
+    }
+
+    private void FixedUpdate()
+    {
+       if(statusSlider.value > 36.6f || statusSlider.value < 68.0f)
         {
-            treeGrow++;
+            treeGrow += growthRate * Time.deltaTime;
+            int treeGrowth = (int)treeGrow;
+            maturityValue.SetText(treeGrowth.ToString());
             CurrentTree();
         }
-        
+
+       
+
     }
 
     private void CurrentTree()
     {
-        if (treeGrow == 0)
+        if (treeGrow >= 20)
         {
-            Debug.Log("");
+            
             trees[0].SetActive(true);
+            
+            if (oneTime)
+            {
+                treeGrowParticle.Play();
+                oneTime = false;
+            }
+
+
         }
 
-        if (treeGrow == 1)
+        if (treeGrow >= 50)
         {
+         
             trees[0].SetActive(false);
             trees[1].SetActive(true);
-            treeGrowParticle.Play();
+
+            
+            if (oneMoreTime)
+            {
+                treeGrowParticle.Play();
+                oneMoreTime= false;
+            }
+
         }
 
-        if (treeGrow == 2)
+        if (treeGrow >= 75)
         {
+        
             trees[1].SetActive(false);
             trees[2].SetActive(true);
-            treeGrowParticle.Play();
+            oneTime = true;
+
+            if (oneMoreMoreMoreTime)
+            {
+                treeGrowParticle.Play();
+                oneMoreMoreMoreTime = false;
+            }
+
+
         }
 
-        if (treeGrow == 3)
+        if (treeGrow >= 100)
         {
+       
             trees[2].SetActive(false);
             trees[3].SetActive(true);
-            treeGrowParticle.Play();
+            oneTime = true;
+            if (oneMoreMoreMoreMoreTime)
+            {
+                treeGrowParticle.Play();
+                oneMoreMoreMoreMoreTime = false;
+            }
+
+
         }
+    }
+
+    void StopParticle()
+    {
+        treeGrowParticle.Stop();
     }
 }

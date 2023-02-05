@@ -4979,7 +4979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusScript: {fileID: 0}
-  rainWaterValue: 1.6
+  rainWaterValue: 10
   rayCastLength: 100
   rainRay1: {fileID: 5212717855827706603}
   rainRay2: {fileID: 5212717856703840436}
