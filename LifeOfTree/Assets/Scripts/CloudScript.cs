@@ -18,12 +18,15 @@ public class CloudScript : MonoBehaviour
 
     void Start()
     {
-        
+        statusScript = GameObject.Find("StatusSlider").GetComponent<StatusScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+    
+
         if(Physics.Raycast(rainRay1.position, -transform.forward, out hit, rayCastLength, layerMask)
             || Physics.Raycast(rainRay2.position, -transform.forward, out hit, rayCastLength, layerMask)
              || Physics.Raycast(rainRay3.position, -transform.forward, out hit, rayCastLength, layerMask)){

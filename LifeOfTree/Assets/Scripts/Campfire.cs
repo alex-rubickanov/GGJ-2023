@@ -6,6 +6,7 @@ public class Campfire : MonoBehaviour
 {
     public ParticleSystem fireParticle;
 
+    
     public void PressedButton()
     {
         Debug.Log("Button has been pressed");
