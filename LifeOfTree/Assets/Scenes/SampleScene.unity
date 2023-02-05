@@ -1250,7 +1250,7 @@ MonoBehaviour:
   seasonChanges: {fileID: 1391762135}
   duringSpringReduction: 0.3
   duringSummerReduction: 0.5
-  duringWinterReduction: 1.5
+  duringWinterReduction: 1.2
 --- !u!1 &266702605
 GameObject:
   m_ObjectHideFlags: 0
@@ -2641,7 +2641,7 @@ MonoBehaviour:
   healthHandler: {fileID: 1822070406}
   fireCost: 20
   fire: {fileID: 5777866894146675945}
-  fireTimeLimit: 10
+  fireTimeLimit: 15
 --- !u!95 &679036715
 Animator:
   serializedVersion: 3
@@ -13741,7 +13741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireParticle: {fileID: 5777866894146675945}
   statusSlider: {fileID: 246552230}
-  heat: 0.3
+  heat: 0.5
 --- !u!82 &2339365225882402498
 AudioSource:
   m_ObjectHideFlags: 0
